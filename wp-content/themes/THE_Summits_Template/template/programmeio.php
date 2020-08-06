@@ -17,7 +17,12 @@
         header_by_ID( get_the_ID());
 
         $sessionDays = getSessionDays();
+        // echo makeGlobalVariable();die;
+        // echo $hello;die;
+        // echo _ISTHISRIGHT_;die;
 ?>
+
+
 
 <style>
     .speaker {
@@ -76,7 +81,7 @@
                     <?php foreach($sessionDays as $key => $day) : ?>
                         <a class="list-group-item list-group-item-action <?= isSelectedDay($key) ? 'active' : ''; ?>"
                         id="list-<?= $key; ?>-list" data-toggle="list" href="#list-<?= $key; ?>"
-                        role="tab" aria-controls="home"><?= formatDate($day->programme_day, "l d F Y"); ?></a>
+                        role="tab" aria-controls="home"><?= formatProgrammeDate($day->programme_day, "l d F Y"); ?></a>
                     <?php endforeach; ?>
                 </div>
             </div>

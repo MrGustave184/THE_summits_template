@@ -26,7 +26,7 @@ function postHaveContent()
 }
 
 // Think of a better name
-function formatDate(date $date, string $format) {
+function formatProgrammeDate(string $date, string $format) {
     return date($format, strtotime($date));
 }
 
@@ -55,3 +55,18 @@ function getPresentationsByDay($day) {
         "SELECT * FROM $programme_table WHERE programme_day = '$day' ORDER BY cast(REPLACE(start_time, ':', '') as unsigned)"
     );
 }
+
+
+// Model and controller in the same file?
+
+// Model
+function getFromDatabase() {
+    return 'I got this from the database';
+}
+
+// Controller
+// El controlador va a pasar todos los datos necesarios para la vista
+function ProgrammeController() {
+    return 'retorna la vista';
+}
+
