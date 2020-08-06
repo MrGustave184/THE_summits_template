@@ -15,9 +15,6 @@ function isContentValid($content, $allowedTags) {
     return (bool)trim(str_replace('&nbsp;','',strip_tags($content, $allowedTags))) != '';
 }
 
-
-// ---------------------- FUNCTIONS ------------------------------
-
 function postHaveContent() 
 {
     global $post;
@@ -27,6 +24,14 @@ function postHaveContent()
 
     return isContentValid($content, $allowedTags);
 }
+
+// Think of a better name
+function formatDate(date $date, string $format) {
+    return date($format, strtotime($date));
+}
+
+
+// ---------------------- FUNCTIONS ------------------------------
 
 function getSessionDays()
 {
@@ -38,13 +43,8 @@ function getSessionDays()
     );
 }
 
-function isSelectedDay($counter) {
+function isSelectedDay(int $counter) {
     return $counter == 0;
-}
-
-// Think of a better name
-function formatDate($date) {
-    return date("l d F Y", strtotime($date));
 }
 
 function getPresentationsByDay($day) {

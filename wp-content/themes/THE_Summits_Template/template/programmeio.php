@@ -1,9 +1,9 @@
 <?php
-    include 'helpers/programmeFunctions.php';
     /**
      * Template name: Concurrent Event Programme
      */
-    
+    include 'helpers/programmeFunctions.php';
+
     get_header(); 
 
     $settings_page_id = get_id_by_slug('settings');
@@ -76,7 +76,7 @@
                     <?php foreach($sessionDays as $key => $day) : ?>
                         <a class="list-group-item list-group-item-action <?= isSelectedDay($key) ? 'active' : ''; ?>"
                         id="list-<?= $key; ?>-list" data-toggle="list" href="#list-<?= $key; ?>"
-                        role="tab" aria-controls="home"><?= formatDate($day->programme_day); ?></a>
+                        role="tab" aria-controls="home"><?= formatDate($day->programme_day, "l d F Y"); ?></a>
                     <?php endforeach; ?>
                 </div>
             </div>
