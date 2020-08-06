@@ -1,0 +1,8 @@
+    .disabled {
+        pointer-events: none;
+        cursor: default;
+    }
+	
+	.texto-timeline{
+		font-size: 12px;
+	}
