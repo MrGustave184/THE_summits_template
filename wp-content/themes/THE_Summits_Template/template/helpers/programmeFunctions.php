@@ -1,4 +1,7 @@
 <?php
+// -------------------- ISSUES ------------------------------------
+// chair/speakers that appears several times through the programme and rendering several times
+
 
 // -------------------- VARIABLES ------------------------------------
 
