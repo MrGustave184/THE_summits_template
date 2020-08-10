@@ -4,7 +4,6 @@
 
 
 // -------------------- VARIABLES ------------------------------------
-
 global $programme_table; 
 global $speakers_table; 
 
@@ -13,8 +12,8 @@ $speakers_table = $wpdb->base_prefix."synclogic_speakers";
 
 
 // ---------------------- HELPERS ------------------------------
-
-function isContentValid($content, $allowedTags) {
+function isContentValid($content, $allowedTags) 
+{
     return (bool)trim(str_replace('&nbsp;','',strip_tags($content, $allowedTags))) != '';
 }
 
@@ -29,13 +28,13 @@ function postHaveContent()
 }
 
 // Think of a better name
-function formatProgrammeDate(string $date, string $format) {
+function formatProgrammeDate(string $date, string $format) 
+{
     return date($format, strtotime($date));
 }
 
 
 // ---------------------- FUNCTIONS ------------------------------
-
 function getSessionDays()
 {
     global $wpdb;
@@ -50,7 +49,8 @@ function isSelectedDay(int $counter) {
     return $counter == 0;
 }
 
-function getPresentationsByDay($day) {
+function getPresentationsByDay($day) 
+{
     global $wpdb;
     global $programme_table;
 
@@ -58,7 +58,6 @@ function getPresentationsByDay($day) {
         "SELECT * FROM $programme_table WHERE programme_day = '$day' ORDER BY cast(REPLACE(start_time, ':', '') as unsigned)"
     );
 }
-
 
 // Model and controller in the same file?
 

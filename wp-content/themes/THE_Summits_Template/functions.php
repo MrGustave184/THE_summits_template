@@ -127,9 +127,6 @@ function clean_custom_menus() {
                 foreach( $menu_items as $submenu ) {
                     if( $submenu->menu_item_parent == $parent ) {
                         $bool = true;
-                        //echo '<div>1'.wp_make_link_relative($current_url).'</div>';
-                        //echo '<div>2'.substr($submenu->url, 0, -1).'</div>';
-                        //if( wp_make_link_relative($current_url) == (substr($submenu->url, 0, -1)) ){ echo '<div>Son Iguales!! </div>';}else {echo '<div>No iguales.</div>';}
                         $menu_array[] = '<a class="dropdown-item" target="'.$submenu->target.'" href="' . $submenu->url . '">' . $submenu->title . '</a>' ."\n";
                     }
                 }
@@ -154,16 +151,12 @@ function clean_custom_menus() {
                 }
 
             }
-
-            // end <li>
             $menu_list .= '</li>' ."\n";
         }
 
 
         $menu_list .= "\t\t\t\t". '</ul>' ."\n";
         $menu_list .= "\t\t\t". '</nav>' ."\n";
-    } else {
-        // $menu_list = '<!-- no list defined -->';
     }
     echo $menu_list;
 }
@@ -233,8 +226,6 @@ function clean_custom_expansible_menus() {
         $menu_list .= "\t\t". '</ul>' ."\n";
         $menu_list .= "\t". '</div>' ."\n";
         $menu_list .= "\t". '</nav>' ."\n";
-    } else {
-        // $menu_list = '<!-- no list defined -->';
     }
     echo $menu_list;
 }
@@ -290,7 +281,6 @@ function dynSponsorImg($partners,$link) {
 
 /* Printing the Header by the Page ID*/
 function header_by_ID($id) {
-    //echo $id;
     if ($id){
         $header = "";
             // If it is a Color background
